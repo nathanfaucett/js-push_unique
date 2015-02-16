@@ -7,7 +7,7 @@ function basePushUnique(array, value) {
     }
 }
 
-module.exports = function pushUnique(array) {
+function pushUnique(array) {
     var i = 0,
         il = arguments.length - 1;
 
@@ -16,4 +16,17 @@ module.exports = function pushUnique(array) {
     }
 
     return array;
+}
+
+pushUnique.array = function(array, values) {
+    var i = -1,
+        il = values.length - 1;
+
+    while (i++ < il) {
+        basePushUnique(array, values[i]);
+    }
+
+    return array;
 };
+
+module.exports = pushUnique;
