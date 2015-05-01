@@ -1,11 +1,7 @@
 var indexOf = require("index_of");
 
 
-function basePushUnique(array, value) {
-    if (indexOf(array, value) === -1) {
-        array[array.length] = value;
-    }
-}
+module.exports = pushUnique;
 
 function pushUnique(array) {
     var i = 0,
@@ -29,4 +25,8 @@ pushUnique.array = function(array, values) {
     return array;
 };
 
-module.exports = pushUnique;
+function basePushUnique(array, value) {
+    if (indexOf(array, value) === -1) {
+        array[array.length] = value;
+    }
+}
